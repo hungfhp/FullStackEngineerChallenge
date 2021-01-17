@@ -1,38 +1,81 @@
-# Full Stack Developer Challenge
-This is an interview challengs. Please feel free to fork. Pull Requests will be ignored.
+# Project setup
 
-## Requirements
-Design a web application that allows employees to submit feedback toward each other's performance review.
+### Prerequisites
 
-*Partial solutions are acceptable.*  It is not necessary to submit a complete solution that implements every requirement.
+MongoDB server running on port 27017
 
-### Admin view
-* Add/remove/update/view employees
-* Add/update/view performance reviews
-* Assign employees to participate in another employee's performance review
+NodeJS environment
 
-### Employee view
-* List of performance reviews requiring feedback
-* Submit feedback
+# Server
 
-## Challenge Scope
-* High level description of design and technologies used
-* Server side API (using a programming language and/or framework of your choice)
-  * Implementation of at least 3 API calls
-  * Most full stack web developers at PayPay currently use Java, Ruby on Rails, or Node.js on the server(with MySQL for the database), but feel free to use other tech if you prefer
-* Web app
-  * Implementation of 2-5 web pages using a modern web framework (e.g. React or Angular) that talks to server side
-    * This should integrate with your API, but it's fine to use static responses for some of it 
-* Document all assumptions made
-* Complete solutions aren't required, but what you do submit needs to run.
+MongoDB + ExpressJS + JWT
 
-## How to complete this challenge
-* Fork this repo in github
-* Complete the design and code as defined to the best of your abilities
-* Place notes in your code to help with clarity where appropriate. Make it readable enough to present to the PayPay interview team
-* Complete your work in your own github repo and send the results to us and/or present them during your interview
+##### How to run
 
-## What are we looking for? What does this prove?
-* Assumptions you make given limited requirements
-* Technology and design choices
-* Identify areas of your strengths
+```
+# install dependencies
+$ npm install
+
+# Run server:
+$ npm start
+```
+
+-> Server running on http://localhost:8080
+
+# Client
+
+React + antd
+
+##### How to run
+
+```
+# install dependencies
+$ yarn
+
+# Run web app:
+$ yarn start
+```
+
+-> Web app running on http://localhost:3000
+
+## Users's example
+
+Available users to login:
+
+### Admin user:
+
+```
+email:      admin@gmail.com
+password:   123456
+```
+
+### Employee user:
+
+```
+email:      employee@gmail.com
+password:   123456
+```
+
+# Assumptions
+
+## Admin user
+
+1. Login on http://localhost:3000/login
+2. Successfully logged in with default admin account
+3. Add/update/view employees
+
+   Add/update/view performance reviews
+
+   Assign one employee to participate in another employee's performance review
+
+   #Pending: remove employees, assign multiple employees to review
+
+## Emloyee user
+
+1. Login on http://localhost:3000/login
+2. Successfully logged in with default employee account or created account by admin
+3. List of performance reviews requiring feedback
+
+   Submit feedback
+
+#Pending tasks: validate fields
